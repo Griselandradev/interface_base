@@ -1,0 +1,6 @@
+/* Component-specific styles here */
+.post {
+    border: 1px solid #f5ff69;
+    padding: 20px;
+    margin-bottom: 20px;
+  }

@@ -1,0 +1,22 @@
+/* Header.css */
+
+header {
+    background-color: #5759c5;
+    padding: 20px;
+  }
+  
+  nav ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+  }
+  
+  nav li {
+    display: inline-block;
+    margin-right: 20px;
+  }
+  
+  nav a {
+    text-decoration: none;
+    color: #d3d1d1;
+  }

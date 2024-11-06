@@ -8,7 +8,7 @@ function About() {
       <Header /> {}
       <div className="about-container">
         <h1>About Us</h1>
-        <p>ESTO DEBE MEJORAR</p>
+        <p>YA MEJORO</p>
         <p><strong>Location:</strong> Medellín, Colombia</p>
         <p><strong>Year:</strong> 2024</p>
       </div>

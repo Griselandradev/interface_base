@@ -1,7 +1,6 @@
 import React from 'react';
 
 const TableMain = ({ data }) => {
-  // Comprobación si hay datos para mostrar
   if (!data || data.length === 0) {
     return <p>No hay datos disponibles.</p>;
   }

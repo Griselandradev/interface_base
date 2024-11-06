@@ -1,14 +1,18 @@
 import React from 'react';
-import Header from '../components/Header';
-import Footer from '../components/Footer';
+import './About.css'; 
+import Header from '../components/Header'; 
 
 function About() {
   return (
     <div>
-      <Header />
-      <h1>About Me</h1>
-      <p>This is a simple React app to demonstrate basic concepts.</p>
-      <Footer />
+      <Header /> {}
+      <div className="about-container">
+        <img src="/path/to/your/image.jpg" alt="About Us" /> {}
+        <h1>About Us</h1>
+        <p>Welcome to our website! We are a company based in Medellín, Colombia. We strive to provide the best service to our clients. Our team is dedicated to innovation and delivering quality solutions. Thank you for visiting our site!</p>
+        <p><strong>Location:</strong> Medellín, Colombia</p>
+        <p><strong>Year:</strong> 2024</p>
+      </div>
     </div>
   );
 }

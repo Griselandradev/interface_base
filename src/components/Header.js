@@ -1,20 +1,19 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import logo from '../assets/logo.jpg'; 
+import './Header.css';
+import logo from '../assets/logo.png'; // Ruta correcta a la imagen
 
 function Header() {
   return (
-    <header>
-      <div className="logo">
-        <img src={logo} alt="Logo" />
+    <header className="header">
+      <div className="header-content">
+        <img src={logo} alt="Logo" className="logo" />
+        <nav className="nav-menu">
+          <Link to="/">Inicio</Link>
+          <Link to="/about">Nuestra Empresa</Link>
+          <Link to="/contact">Contacto</Link>
+        </nav>
       </div>
-      <nav>
-        <ul>
-          <li><Link to="/">Home</Link></li>
-          <li><Link to="/about">About</Link></li>
-          <li><Link to="/contact">Contact</Link></li>
-        </ul>
-      </nav>
     </header>
   );
 }

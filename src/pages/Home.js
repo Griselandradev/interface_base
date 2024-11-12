@@ -1,49 +1,50 @@
-import React, { useState } from 'react';
-import { getNationality } from '../api/Api';
+import React from 'react';
 import Header from '../components/Header';
 import Footer from '../components/Footer';
-import './Home.css'; 
+import './Home.css';
+import imagenTanques from '../assets/images/imagen_tanques.png'; // Verifica la ruta
+import imagenDuctos from '../assets/images/imagen_ductos.png'; // Verifica la ruta
+import imagenMedida from '../assets/images/imagen_medida.png'; // Verifica la ruta
+
+const categories = [
+  {
+    id: 1,
+    name: 'Tanques',
+    description: 'Tanques de alta calidad para almacenamiento de agua y otros líquidos.',
+    imageUrl: imagenTanques,
+  },
+  {
+    id: 2,
+    name: 'Ductos para basura',
+    description: 'Sistemas de ductos para manejo eficiente de desechos.',
+    imageUrl: imagenDuctos,
+  },
+  {
+    id: 3,
+    name: 'Productos a medida',
+    description: 'Diseñamos y fabricamos productos personalizados a tus necesidades.',
+    imageUrl: imagenMedida,
+  },
+];
 
 function Home() {
-  const [name, setName] = useState('');
-  const [nationalities, setNationalities] = useState([]);
-  const [error, setError] = useState(null);
-
-  const handleSearch = async () => {
-    try {
-      const response = await getNationality(name);
-      setNationalities(response.data.country); 
-      setError(null);
-    } catch (error) {
-      console.error('Error al predecir la nacionalidad:', error);
-      setError('No se pudo obtener la nacionalidad. Intenta nuevamente.');
-    }
-  };
-
   return (
     <div className="home-container">
-      <Header />
-      <div className="search-container">
-        <h1>Predicción de Nacionalidad</h1>
-        <input
-          type="text"
-          value={name}
-          onChange={(e) => setName(e.target.value)}
-          placeholder="Escribe un nombre"
-          className="name-input"
-        />
-        <button onClick={handleSearch} className="search-btn">Buscar Nacionalidad</button>
-        {error && <p className="error-msg">{error}</p>}
-      </div>
-      <div className="results-container">
-        <ul>
-          {nationalities.map((nationality, index) => (
-            <li key={index}>
-              <strong>País:</strong> {nationality.country_id} -{' '}
-              <strong>Probabilidad:</strong> {(nationality.probability * 100).toFixed(2)}%
-            </li>
-          ))}
-        </ul>
+      <Header /> 
+      <p>Categorías de productos:</p>
+      <div className="categories-container">
+        {categories.map((category) => (
+          <div key={category.id} className="category-card">
+            <img
+              src={category.imageUrl}
+              alt={category.name}
+              className="category-image"
+            />
+            <h2>{category.name}</h2>
+            <p>{category.description}</p>
+            <button className="explore-button">Explorar {category.name}</button>
+          </div>
+        ))}
       </div>
       <Footer />
     </div>

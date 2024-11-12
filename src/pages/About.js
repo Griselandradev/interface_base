@@ -1,6 +1,8 @@
+// About.js
 import React from 'react'; 
 import './About.css'; 
 import Header from '../components/Header'; 
+import Footer from '../components/Footer'; 
 
 function About() {
   return (
@@ -33,12 +35,10 @@ function About() {
               Garantizando la sostenibilidad de nuestra empresa en el tiempo, de nuestro personal y accionistas.</p>
           </div>
         </div>
-        <p>Contacto: <a href="tel:+573216436377">3216436377</a></p>
-        <p>Dirección: Calle 99 Sur # 56-35. Barrio La Tablaza, La Estrella, Antioquia.</p>
       </div>
+      <Footer />
     </div>
   );
 }
 
 export default About;
-

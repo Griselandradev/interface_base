@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 import './Header.css';
 import logo from '../assets/logo.png';
 
-function Header() {
+function Header({ cartCount }) {
   return (
     <header className="header">
       <div className="header-content">
@@ -13,6 +13,9 @@ function Header() {
           <Link to="/services">Servicios</Link>
           <Link to="/contact">Contacto</Link>
           <Link to="/about">Nuestra Empresa</Link>
+          <Link to="/cart" className="cart-link">
+            Carrito ({cartCount || 0})
+          </Link>
         </nav>
       </div>
     </header>

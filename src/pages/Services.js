@@ -17,7 +17,7 @@ const products = [
     id: 2,
     name: 'Producto 2',
     price: 150,
-    imageUrl: tanquImage, 
+    imageUrl: tanquImage, // Referencia a la imagen importada
   },
 ];
 

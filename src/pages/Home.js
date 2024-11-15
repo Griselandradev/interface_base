@@ -1,10 +1,11 @@
 import React from 'react';
+import { useNavigate } from 'react-router-dom'; // Importa useNavigate
 import Header from '../components/Header';
 import Footer from '../components/Footer';
 import './Home.css';
-import imagenTanques from '../assets/images/imagen_tanques.png'; // Verifica la ruta
-import imagenDuctos from '../assets/images/imagen_ductos.png'; // Verifica la ruta
-import imagenMedida from '../assets/images/imagen_medida.png'; // Verifica la ruta
+import imagenTanques from '../assets/images/imagen_tanques.png';
+import imagenDuctos from '../assets/images/imagen_ductos.png';
+import imagenMedida from '../assets/images/imagen_medida.png';
 
 const categories = [
   {
@@ -28,9 +29,15 @@ const categories = [
 ];
 
 function Home() {
+  const navigate = useNavigate(); // Inicializa el hook de navegación
+
+  const handleExploreClick = (categoryName) => {
+    navigate('/services', { state: { category: categoryName } }); // Navega a Services.js y pasa la categoría seleccionada
+  };
+
   return (
     <div className="home-container">
-      <Header /> 
+      <Header />
       <p>Categorías de productos:</p>
       <div className="categories-container">
         {categories.map((category) => (
@@ -42,7 +49,12 @@ function Home() {
             />
             <h2>{category.name}</h2>
             <p>{category.description}</p>
-            <button className="explore-button">Explorar {category.name}</button>
+            <button
+              className="explore-button"
+              onClick={() => handleExploreClick(category.name)} // Llama a la función de navegación
+            >
+              Explorar {category.name}
+            </button>
           </div>
         ))}
       </div>

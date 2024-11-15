@@ -1,23 +1,24 @@
 import React, { useState } from 'react';
 import './Services.css';
 import ProductModal from '../components/ProductModal';
-import Header from '../components/Header'; // Asegúrate de que la ruta sea correcta
-import Footer from '../components/Footer'; // Asegúrate de que la ruta sea correcta
+import Header from '../components/Header'; 
+import Footer from '../components/Footer'; 
+import discoImage from '../assets/images/disco.png';
+import tanquImage from '../assets/images/tanqu.png';
 
 const products = [
   {
     id: 1,
     name: 'Producto 1',
     price: 100,
-    imageUrl: 'ruta/a/tu/imagen1.jpg', // Cambia esto a la ruta de tu imagen
+    imageUrl: discoImage, 
   },
   {
     id: 2,
     name: 'Producto 2',
     price: 150,
-    imageUrl: 'ruta/a/tu/imagen2.jpg',
+    imageUrl: tanquImage, 
   },
-  // Agrega más productos según sea necesario
 ];
 
 function Services() {
@@ -45,7 +46,7 @@ function Services() {
 
   return (
     <div className="services-container">
-      <Header /> 
+      <Header />
       <div className="product-grid">
         {products.map((product) => (
           <div key={product.id} className="product-card">
@@ -65,7 +66,7 @@ function Services() {
         <ProductModal product={selectedProduct} onClose={closeModal} />
       )}
 
-      <Footer /> {/* Incluye el Footer aquí */}
+      <Footer />
     </div>
   );
 }
